@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Card</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffebee, #fce4ec);
+            font-family: 'Arial', sans-serif;
+        }
+
+        .valentine-card {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: #e91e63;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: clamp(1.5em, 5vw, 2.5em);
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .photo-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            aspect-ratio: 4/3;
+        }
+
+        .photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(233, 30, 99, 0.9);
+            color: white;
+            padding: 15px;
+            font-size: 0.9em;
+        }
+
+        .caption h3 {
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .caption p {
+            line-height: 1.4;
+        }
+
+        .message {
+            text-align: left;
+            padding: 15px;
+            background: #fce4ec;
+            border-radius: 15px;
+            margin: 15px 0;
+        }
+
+        .message p {
+            color: #e91e63;
+            font-size: 1em;
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+
+        .footer {
+            text-align: right;
+            font-style: italic;
+            color: #e91e63;
+            margin-top: 15px;
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 768px) {
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .caption {
+                transform: translateY(100%);
+                transition: transform 0.3s ease;
+            }
+
+            .photo-container:hover .caption {
+                transform: translateY(0);
+            }
+
+            .photo-container:hover {
+                transform: scale(1.02);
+            }
+        }
+
+        /* Mobile Touch Handling */
+        @media (hover: none) {
+            .caption {
+                position: relative;
+                transform: none;
+                background: #e91e63;
+            }
+
+            .photo-container {
+                margin-bottom: 10px;
+            }
+        }
+
+        /* Small Screen Adjustments */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .valentine-card {
+                padding: 15px;
+            }
+
+            .message p {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Same HTML content as before -->
+    <div class="valentine-card">
+        <div class="header">
+            <h1>Happy Valentine's Day</h1>
+        </div>
+
+        <div class="message">
+            <p>Dear momo,</p>
+            <p>
+            I can't believe it has been more than 2 years since we first met.
+            Valentine's day is coming up and I was going through all our memories together
+            thinking about what would be a beautiful thing to get you. While going through these old
+            photos I couldn't stop smiling the whole time. I realized what could be more beautiful
+            than to take you through this journey we have been through again. To take you through
+            how we fell in love deeper and deeper with every passing day for the past 2 years.
+            </p>
+        </div>
+
+        <div class="photo-grid">
+            <div class="photo-container">
+                <img src="photo1.jpg" alt="First Meeting" class="photo">
+                <div class="caption">
+                    <h3>The day we first met</h3>
+                    <p>I can't believe this is where we first met. The first time I saw you was in between
+                    a sea of people, but as soon as I saw you I couldn't take my eyes off you. I don't regret not
+                    taking a picture that day, because everything about that day is in my head, clear as if 
+                    it just happened yesterday.</p>
+                </div>
+            </div>
+            <!-- Add other photo containers similarly -->
+            <div class="photo-container">
+                <img src="photo2.jpg" alt="Love SS" class="photo">
+                <div class="caption">
+                    <h3>The day you told me your feelings</h3>
+                    <p>I still remember the day you said this to me. Probably the happiest day of
+                    my life. I was so happy I took a screenshot of it and kept looking at it for days after.</p>
+                </div>
+            </div>
+            <!-- Add other photo containers similarly -->
+            <div class="photo-container">
+                <img src="photo3.jpg" alt="2nd date" class="photo">
+                <div class="caption">
+                    <h3>The day we first met after we started dating</h3>
+                    <p>The 8 months I didn't see you after we first met felt like 8 decades. I remember 
+                    showing up at your building and seeing you walk towards me and all I could think was -
+                    Wow! She is the most beautiful woman I have ever seen, and she is my girlfriend! 
+                    I was so shocked that I went in for a handshake instead of a hug!</p>
+                </div>
+            </div>
+            <!-- Add other photo containers similarly -->
+            <div class="photo-container">
+                <img src="photo4.jpg" alt="2nd date" class="photo">
+                <div class="caption">
+                    <h3>Our first trip</h3>
+                    <p>I still remember how happy you were when we went to the hotel, you couldn't stop
+                    smiling. It was a short trip but it became the best trip of my life...atleast until the
+                    next one ;)</p>
+                </div>
+            </div>
+            <!-- Add other photo containers similarly -->
+            <!-- Add other photo containers similarly -->
+            <div class="photo-container">
+                <img src="photo5.jpg" alt="2nd date" class="photo">
+                <div class="caption">
+                    <h3>Our first new year's</h3>
+                    <p>We spent 2 days at the Orchid for new year's. I think we left the room only
+                    twice the whole time we were there. We just enjoyed each other's company so much
+                    that we didn't realize when 2 days went by. And we had our first new year's kiss!</p>
+                </div>
+            </div>
+            <!-- Add other photo containers similarly -->
+            <!-- Add other photo containers similarly -->
+            <div class="photo-container">
+                <img src="photo6.jpg" alt="2nd date" class="photo">
+                <div class="caption">
+                    <h3>Goa trip!</h3>
+                    <p>
+                    The first long trip we went on. And it was the best! Be it walking on the beach hand in
+                    hand or kayaking or exploring the streets on the scooty, I just had the best time with you.
+                    Even just laying in bed at the hotel watching a movie was memorable. 
+                    </p>
+                </div>
+            </div>
+            <!-- Add other photo containers similarly -->
+            <div class="photo-container">
+                <img src="photo7.jpg" alt="2nd date" class="photo">
+                <div class="caption">
+                    <h3>Our first concert</h3>
+                    <p>
+                    I was so worried when I was planning this surprise. I didn't know if you would
+                    like it. But I saw the look of surprise and happiness on your face as soon as I
+                    showed you that wristband and I knew you loved it! We didn't know a lot of the songs
+                    he sang but just vibing with you alongside me and seeing you happy and excited made
+                    it so memorable for me!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Add other photo containers similarly -->
+            <div class="photo-container">
+                <img src="photo8.jpg" alt="2nd date" class="photo">
+                <div class="caption">
+                    <h3>Lonavala trip</h3>
+                    <p>
+                    After the concert we went to Lonavala, the hotel with the best view I have seen so
+                    far. But that view still paled in comparison to the smile you had on your face from
+                    the entire weekend. It was a perfect weekend!
+                    </p>
+                </div>
+            </div>
+            <!-- Add other photo containers similarly -->
+            <!-- Add other photo containers similarly -->
+            <div class="photo-container">
+                <img src="photo9.jpg" alt="2nd date" class="photo">
+                <div class="caption">
+                    <h3>Meeting the parents</h3>
+                    <p>
+                    I didn't think I could meet anyone as sweet as you ever in my life. But then I met
+                    your family. Everyone treated me like I was part of the family. Your parents treated
+                    me like their own son.
+                    </p>
+                </div>
+            </div>
+            <!-- Add other photo containers similarly -->
+
+            <div class="photo-container">
+                <img src="photo10.jpg" alt="2nd date" class="photo">
+                <div class="caption">
+                    <h3>Coldplay!</h3>
+                    <p>
+                    I remember you telling me it was your dream to attend a Coldplay concert. When they
+                    announced their India tour we were both so excited. I could tell you were heartbroken
+                    when we didn't get the tickets. But then you had that big smile on your face when we got the
+                    Abu Dhabi tickets. I still remember the tears in your eyes
+                    when they played Fix You. I am so lucky to have experienced that with the love of my life.
+                    </p>
+                </div>
+            </div>
+            <!-- Add other photo containers similarly -->
+            <div class="photo-container">
+                <img src="photo11.jpg" alt="2nd date" class="photo">
+                <div class="caption">
+                    <h3>Dubai trip</h3>
+                    <p>
+                    This entire trip was like a dream. You were so excited and happy every place we went.
+                    You were like a small child taking pictures of everything with a huge smile. I loved it! 
+                    I don't think I am still over this trip.
+                    I don't know how every trip we go on becomes the best trip of my life, but again, this
+                    is the best trip of my life; until next time!
+                    </p>
+                </div>
+            </div>
+ 
+        </div>
+
+        <div class="message">
+            <p>
+            Every moment I have spent with you has been the best time of my life. I
+            can't thank you enough for the last 2 years. And I promise you that we
+            are going to have a lifetime of these happy memories together!
+            </p>
+        </div>
+
+        <div class="footer">
+            <p>Forever Yours,</p>
+            <p>Aditya ❤️ </p>
+        </div>
+    </div>
+</body>
+</html>
+
