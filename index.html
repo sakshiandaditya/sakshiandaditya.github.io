@@ -129,15 +129,20 @@
 
         /* Mobile Touch Handling */
         @media (hover: none) {
+
             .caption {
-                position: relative;
-                transform: none;
-                background: #e91e63;
+                transform: translateY(100%);
+                transition: transform 0.3s ease;
             }
 
-            .photo-container {
-                margin-bottom: 10px;
+            .photo-container:hover .caption {
+                transform: translateY(0);
             }
+
+            .photo-container:hover {
+                transform: scale(1.02);
+            }
+
         }
 
         /* Small Screen Adjustments */
